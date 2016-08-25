@@ -69,3 +69,10 @@ class CSVDataReader():
                         self.tweets_per_hour = OrderedDict(sorted(self.tweets_per_hour.items(), key=lambda t: t[0]))
                         data.close()
                 return [self.text_Data, self.lang_Data,self.tweets_per_hour, self.unique_tweets, self.coordinates]
+                
+########################################################################
+#																	   #
+#   Der Quellcode beider Dateien wurde in Zusammenarbeit mit Raphael   #
+#   Katschke geschrieben 											   #
+#																	   #
+########################################################################

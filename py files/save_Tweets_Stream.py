@@ -56,4 +56,11 @@ class TwitterStreamListener(tweepy.StreamListener):
 if __name__ == "__main__":
         start_stream()
 
+########################################################################
+#																	   #
+#   Der Quellcode beider Dateien wurde in Zusammenarbeit mit Raphael   #
+#   Katschke geschrieben 											   #
+#																	   #
+########################################################################
+
         
