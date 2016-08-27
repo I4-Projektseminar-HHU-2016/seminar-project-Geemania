@@ -24,10 +24,15 @@ class TwitterClientCrawler():
                                         delimiter=";",
                                         lineterminator="\n",
                                         encoding='utf-8')
-                    if tweet.place:
-                        writer.writerow([tweet.id_str, tweet.created_at, tweet.text, tweet.lang, tweet.place.bounding_box.coordinates])
+                    if tweet.place and tweet.user.location:
+                        writer.writerow([tweet.id_str, tweet.created_at, tweet.text, tweet.lang, tweet.place.bounding_box.coordinates, tweet.user.location])
+                    elif ((not tweet.place) and (tweet.user.location)):
+                        writer.writerow([tweet.id_str, tweet.created_at, tweet.text, tweet.lang, 'NaN', tweet.user.location])
+                    elif ((tweet.place) and (not tweet.user.location)):
+                        writer.writerow([tweet.id_str, tweet.created_at, tweet.text, tweet.lang, tweet.place.bounding_box.coordinates, 'NaN'])
                     else:
-                        writer.writerow([tweet.id_str, tweet.created_at, tweet.text, tweet.lang, 'NaN'])
+                        writer.writerow([tweet.id_str, tweet.created_at, tweet.text, tweet.lang, 'NaN', 'NaN'])
+                    
         resultFile.close()
 
 if __name__ == "__main__":
@@ -36,8 +41,8 @@ if __name__ == "__main__":
 
 
 ########################################################################
-#																	   #
-#   Der Quellcode beider Dateien wurde in Zusammenarbeit mit Raphael   #
-#   Katschke geschrieben 											   #
-#																	   #
+#                                                                      #
+#   Der Quellcode beider Dateien wurde in Zusammenarbeit mit Thorsten  #
+#   Brueckner geschrieben                                              #
+#                                                                      #
 ########################################################################
