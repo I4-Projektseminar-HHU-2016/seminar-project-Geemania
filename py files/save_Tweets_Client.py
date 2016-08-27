@@ -42,7 +42,7 @@ if __name__ == "__main__":
 
 ########################################################################
 #                                                                      #
-#   Der Quellcode beider Dateien wurde in Zusammenarbeit mit Thorsten  #
-#   Brueckner geschrieben                                              #
+#   Der Quellcode beider Dateien wurde in Zusammenarbeit mit Raphael   #
+#   Katschke geschrieben                                               #
 #                                                                      #
 ########################################################################
