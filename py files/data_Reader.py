@@ -2,12 +2,14 @@ import unicodecsv as csv
 import re
 from collections import Counter, OrderedDict
 
-
+#Takes a csv file and splits data into several lists that are returned 
 class CSVDataReader():
 
     def __init__(self):
         return
     def FileReader(self, fileName):
+
+        print ('reading file...')
 
         self.temp_id = []
         self.temp_datelist = []
@@ -26,11 +28,10 @@ class CSVDataReader():
         with open(fileName, 'rb') as data:
             reader = csv.reader(data, delimiter=";", lineterminator="\r\n", encoding='utf-8')
         
-            # Die csv Datei wird Zeile fuer Zeile eingelesen und aufs Datum 
-            # geprueft um die relevanten Daten zu filtern
+            # reading row for row 
             for row in reader:
 
-                self.split_date = row[1].split() # Trennung von Datum und Uhrzeit
+                self.split_date = row[1].split() # Splitting Date and Time
                 self.split_place = []
                 self.regex = re.compile('^\d{18}$')
                 self.coords = []
@@ -43,8 +44,8 @@ class CSVDataReader():
                     self.text_Data[row[0]] = row[2].lower()  # save text into dictionary[tweet_id]
                     self.lang_Data[row[0]] = row[3].lower()
                 
-                    self.new_time = self.split_date[1].split(':') # Stunden, Min. und Sek. aufbrechen
-                    self.temp_time_of_day.append(self.new_time[0]) # Nur Stunden gespeichert
+                    self.new_time = self.split_date[1].split(':') # hours, min. und sec. 
+                    self.temp_time_of_day.append(self.new_time[0]) # saving only hours
 
                     if ('NaN' not in row[4]):
                 
@@ -69,7 +70,7 @@ class CSVDataReader():
                     if ('NaN' not in row[5]):
                         self.country[row[0]] = row[5]
     
-            self.tweets_per_hour = Counter(self.temp_time_of_day) # Zaehlen der tweets je Stunde
+            self.tweets_per_hour = Counter(self.temp_time_of_day) # counting tweets per hour
             self.tweets_per_hour = OrderedDict(sorted(self.tweets_per_hour.items(), key=lambda t: t[0]))
             data.close()
         return [self.text_Data, self.lang_Data,self.tweets_per_hour, self.unique_tweets, self.coordinates, self.country]

@@ -7,27 +7,27 @@ class geomapping():
 
     def mapping(self, language, coordinates):
 
-        self.fig = plt.figure(figsize=(12, 6), dpi=200)
+        self.fig = plt.figure(figsize=(18, 4), dpi=250)
         plt.title("Tweets zu #Legion #Warcraft und #WorldofWarcraft")
 
-        m = Basemap(projection='merc', llcrnrlat=-80, urcrnrlat=80, llcrnrlon=-180,urcrnrlon=180, lat_ts=20, resolution='c')
-        m.etopo(scale=0.2)
+        map = Basemap(projection='merc', llcrnrlat=-80, urcrnrlat=80, llcrnrlon=-180,urcrnrlon=180, lat_ts=20, resolution='l')
+        map.bluemarble(scale=0.3)
 
         plt.ion()
         plt.show()
 
         for elem in coordinates:
-            self.x, self.y = m(coordinates[elem][0], coordinates[elem][1])
+            self.x, self.y = map(coordinates[elem][0], coordinates[elem][1])
             if language[elem] == 'en':
-                m.plot(self.x, self.y, 'ro', markersize=3)
+                map.plot(self.x, self.y, 'ro', markersize=3)
             elif language[elem] == 'de':
-                m.plot(self.x, self.y, 'go', markersize=3)
+                map.plot(self.x, self.y, 'go', markersize=3)
             elif language[elem] == 'fr':
-                m.plot(self.x, self.y, 'bo', markersize=3)
+                map.plot(self.x, self.y, 'bo', markersize=3)
             elif language[elem] == 'es':
-                m.plot(self.x, self.y, 'yo', markersize=3)
+                map.plot(self.x, self.y, 'yo', markersize=3)
             elif language[elem] == 'und':
-                m.plot(self.x, self.y, 'wo', markersize=3)
+                map.plot(self.x, self.y, 'wo', markersize=3)
             plt.draw()
     
         plt.ioff()

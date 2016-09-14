@@ -24,13 +24,13 @@ class langDist(object):
             if self.val < 500:
                 self.dumpV.append(self.val)
             else:
-                self.names.append(self.key)
+                self.names.append(self.key+': '+str(self.val))
                 self.values.append(self.val)
 
         for dump in self.dumpV:
             self.v += dump
 
-        self.names.append('rest')
+        self.names.append('rest: '+str(self.v))
         self.values.append(self.v)
         
         self.dicts['labels'] = self.names
