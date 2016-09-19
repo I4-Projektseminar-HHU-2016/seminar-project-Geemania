@@ -1,6 +1,8 @@
 import unicodecsv as csv
 import nltk
 from nltk import FreqDist
+from bokeh.charts import Bar, show, output_file
+from bokeh.charts.attributes import CatAttr
 
 class landDist(object):
     def __init__(self):
@@ -17,6 +19,7 @@ class landDist(object):
         return self.states_list
 
     def dist(self, data, states, germany, uk, france, spain, canada, russia):
+
         print ('Tweets with location: ', len(data))
         self.countries = [states, germany, uk, france, spain, canada, russia]
         self.names = ['USA', 'Germany', 'UK', 'France', 'Spain', 'Canada', 'Russia']
@@ -29,6 +32,10 @@ class landDist(object):
         self.leftover = ['Sweden', 'Denmark', 'Norway', 'Finland', 'Argentina', 'Australia']
         self.country_list = []
 
+        self.values = []
+        self.label = []
+        self.dicts = {}
+        
         self.index = 0
         for country in self.countries:
             for state in country:
@@ -100,4 +107,17 @@ class landDist(object):
         print ('undefined Tweets: ', len(data))
         
         self.freq = FreqDist(self.country_list).most_common()
-        return self.freq
+
+        for elem in self.freq:
+            (self.key, self.val) = elem
+            self.label.append(self.key)
+            self.values.append(self.val)
+
+        self.dicts['labels'] = self.label
+        self.dicts['vals'] = self.values
+
+        self.graph = Bar(self.dicts, label=CatAttr(columns=['labels'], sort=False), values='vals', color='navy', title='Country Frequency Distribution', legend=False)
+        output_file("country_distribution.html")
+        show(self.graph)
+        
+        return

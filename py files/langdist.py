@@ -36,7 +36,8 @@ class langDist(object):
         self.dicts['labels'] = self.names
         self.dicts['vals'] = self.values
 
-        self.graph = Donut(self.dicts, values='vals', label='labels', title='testing it')
+        self.graph = Donut(self.dicts, values='vals', label='labels', title='Language Frequency Distribution')
+        output_file("language_distribution.html")
         show(self.graph)
         
         return

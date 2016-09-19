@@ -1,11 +1,14 @@
 import matplotlib.pyplot as plt
 from mpl_toolkits.basemap import Basemap
+from os import path
 
 class geomapping():
     def __init__(self):
         return
 
     def mapping(self, language, coordinates):
+
+        self.path = path.join(path.dirname(__file__), 'geomap.png')
 
         self.fig = plt.figure(figsize=(18, 4), dpi=250)
         plt.title("Tweets zu #Legion #Warcraft und #WorldofWarcraft")
@@ -14,7 +17,6 @@ class geomapping():
         map.bluemarble(scale=0.3)
 
         plt.ion()
-        plt.show()
 
         for elem in coordinates:
             self.x, self.y = map(coordinates[elem][0], coordinates[elem][1])
@@ -31,5 +33,5 @@ class geomapping():
             plt.draw()
     
         plt.ioff()
-        plt.show()
+        self.fig.savefig(self.path, transparent=True, bbox_inches='tight')
         return
