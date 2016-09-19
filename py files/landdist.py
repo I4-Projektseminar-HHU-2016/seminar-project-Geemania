@@ -1,3 +1,5 @@
+ # -*- coding: utf-8 -*-
+ 
 import unicodecsv as csv
 import nltk
 from nltk import FreqDist
