@@ -17,7 +17,7 @@ class geomapping():
         map.bluemarble(scale=0.3)
 
         plt.ion()
-
+        plt.show()
         for elem in coordinates:
             self.x, self.y = map(coordinates[elem][0], coordinates[elem][1])
             if language[elem] == 'en':
@@ -33,5 +33,7 @@ class geomapping():
             plt.draw()
     
         plt.ioff()
+        plt.show()
         self.fig.savefig(self.path, transparent=True, bbox_inches='tight')
         return
+        plt.close()
