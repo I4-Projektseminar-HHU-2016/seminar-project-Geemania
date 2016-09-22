@@ -8,7 +8,7 @@ class geomapping():
 
     def mapping(self, language, coordinates):
 
-        self.path = path.join(path.dirname(__file__), 'geomap.png') #geo map image
+        self.path = path.join(path.dirname(__file__), 'geomap.png') #define path for result picture
 
         self.fig = plt.figure(figsize=(18, 4), dpi=200) #basemap figure details
         plt.title("Tweets zu #Legion #Warcraft und #WorldofWarcraft") #sets the title for the results
@@ -34,6 +34,6 @@ class geomapping():
     
         plt.ioff()
         plt.show()
-        self.fig.savefig(self.path, transparent=True, bbox_inches='tight')
+        self.fig.savefig(self.path, transparent=True, bbox_inches='tight') #saving result to geomap.png
         return
         plt.close()
