@@ -7,15 +7,15 @@ import unicodecsv as csv
 
 
 if __name__ == "__main__":
-        
+        #creating instances of imported classes
         read_data = CSVDataReader()
         langdist = langDist()
         landdist = landDist()
         ldd = langDetectDist()
         
 
-        data = read_data.FileReader('result.csv')
-        
+        data = read_data.FileReader('result.csv') #reading results
+        #running the methods of imported classes
         mapper = geomapping()
         mapper.mapping(data[1], data[4])
 
