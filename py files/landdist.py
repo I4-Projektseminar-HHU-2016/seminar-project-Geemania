@@ -10,28 +10,28 @@ class landDist(object):
     def __init__(self):
         return
 
-    def reader(self, fileName):
+    def reader(self, fileName):	#reads different lists of countries that are given
         self.states_list = []
         with open(fileName, 'rb') as data:
             self.csvreader = csv.reader(data, delimiter=",", lineterminator="\r\n", encoding='utf-8')
-            for row in self.csvreader:
+            for row in self.csvreader:	#writing new list
                 self.states_list.append(row)
 
         data.close()
         return self.states_list
 
-    def dist(self, data, states, germany, uk, france, spain, canada, russia):
+    def dist(self, data, states, germany, uk, france, spain, canada, russia):	#commiting default states lists
 
         print ('Tweets with location: ', len(data))
-        self.countries = [states, germany, uk, france, spain, canada, russia]
-        self.names = ['USA', 'Germany', 'UK', 'France', 'Spain', 'Canada', 'Russia']
+        self.countries = [states, germany, uk, france, spain, canada, russia] #writing lists into self.countries
+        self.names = ['USA', 'Germany', 'UK', 'France', 'Spain', 'Canada', 'Russia'] #define names for lists
         
         self.azeroth = ['Azeroth', 'Stormwind', 'Dalaran', 'Lordaeron', 'Azeroth', 'World of Warcraft',
                         'Draenor', 'Undercity', 'Deathguard', "Val'sharah", 'Frostfire Ridge', 'Lordearon',
                         'Blizzard Entertainment', 'Dun Modr', 'Darnassus', 'Warcraft', 'Emerald Dream',
-                        "Quel'Dorei", 'Teldrassil', 'Cenarion Circle', 'Orgrimmar', 'The Nexus', 'Uldum']
+                        "Quel'Dorei", 'Teldrassil', 'Cenarion Circle', 'Orgrimmar', 'The Nexus', 'Uldum'] #adding unique names from wow places
                         
-        self.leftover = ['Sweden', 'Denmark', 'Norway', 'Finland', 'Argentina', 'Australia']
+        self.leftover = ['Sweden', 'Denmark', 'Norway', 'Finland', 'Argentina', 'Australia'] #adding some more countries
         self.country_list = []
 
         self.values = []
@@ -39,7 +39,7 @@ class landDist(object):
         self.dicts = {}
         
         self.index = 0
-        for country in self.countries:
+        for country in self.countries:	#passes through state lists and change entries to proper country
             for state in country:
                 for elem in state:
                     self.keys = []
@@ -49,13 +49,13 @@ class landDist(object):
                             self.country_list.append(self.names[self.index])
                             self.keys.append(entry)
                     
-                    for key in self.keys:
+                    for key in self.keys:	#if entry was found its deleted to not check it again for next iteration
                         if key in data:
                             data.pop(key, None)
         
             self.index += 1
 
-        for wow in self.azeroth:
+        for wow in self.azeroth:	#passes through list and change to world of warcraft
             self.keys = []
             for entry in data:
                 if data[entry].find(wow) != -1:
@@ -66,7 +66,7 @@ class landDist(object):
                         if key in data:
                             data.pop(key, None)
 
-        for left in self.leftover:
+        for left in self.leftover:	#passes through list and change to proper countries
             self.keys = []
             for entry in data:
                 if data[entry].find(left) != -1:
@@ -85,11 +85,11 @@ class landDist(object):
                     self.country_list.append('UK')
                     self.keys.append(entry)
 
-            for key in self.keys:
+            for key in self.keys:	#if entry was found its deleted to not check it again for next iteration
                 if key in data:
                     data.pop(key, None)
 
-        self.test = []
+        self.test = []	#checking for not catched entries and write it to rest combined
         for elem in data:
             self.test.append(data[elem])
         self.freq_Rest = FreqDist(self.test).most_common()
@@ -108,7 +108,7 @@ class landDist(object):
 
         print ('undefined Tweets: ', len(data))
         
-        self.freq = FreqDist(self.country_list).most_common()
+        self.freq = FreqDist(self.country_list).most_common() #draw the barplot with bokeh
 
         for elem in self.freq:
             (self.key, self.val) = elem
