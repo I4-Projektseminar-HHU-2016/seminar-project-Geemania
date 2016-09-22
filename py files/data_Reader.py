@@ -24,7 +24,7 @@ class CSVDataReader():
         self.coordinates = {}
         self.country = {}
         
-    
+        
         with open(fileName, 'rb') as data:
             reader = csv.reader(data, delimiter=";", lineterminator="\r\n", encoding='utf-8')
         
@@ -47,7 +47,7 @@ class CSVDataReader():
                     self.new_time = self.split_date[1].split(':') # hours, min. und sec. 
                     self.temp_time_of_day.append(self.new_time[0]) # saving only hours
 
-                    if ('NaN' not in row[4]):
+                    if ('NaN' not in row[4]): #checks if coords are given or not
                 
                         self.temp = row[4].replace('[[[', '')
                         self.temp = self.temp.replace(']]]', '')
@@ -73,4 +73,4 @@ class CSVDataReader():
             self.tweets_per_hour = Counter(self.temp_time_of_day) # counting tweets per hour
             self.tweets_per_hour = OrderedDict(sorted(self.tweets_per_hour.items(), key=lambda t: t[0]))
             data.close()
-        return [self.text_Data, self.lang_Data,self.tweets_per_hour, self.unique_tweets, self.coordinates, self.country]
+        return [self.text_Data, self.lang_Data,self.tweets_per_hour, self.unique_tweets, self.coordinates, self.country] #saving temp list for the main.py
