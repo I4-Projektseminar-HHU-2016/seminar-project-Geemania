@@ -1,3 +1,4 @@
+#save_tweets_client wird nicht verwendet da wir uns für den stream entschieden haben
 import tweepy
 import unicodecsv as csv
 import codecs
