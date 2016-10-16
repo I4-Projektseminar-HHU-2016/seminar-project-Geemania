@@ -28,7 +28,7 @@ A step by step series of instructions on how to get the code running
 Get an API Access Key/Token for twitter.
 
 - for an english guide check the official twitter guide via 
-<a href="https://dev.twitter.com/oauth/overview/application-owner-access-tokens/">How to generate Twitter Keys</a>
+<a href="https://dev.twitter.com/oauth/overview/application-owner-access-tokens/" "target=_blank">How to generate Twitter Keys</a>
 - for a german guide check my dokumentation PDF (included)
 - insert your generated keys/tokens in the twitter_keys.py
 	
@@ -55,4 +55,4 @@ Versioning
 
 Authors
 
-- <strong>Thorsten Brückner</strong> - <a href="https://github.com/Geemania">Geemania</a>
+- <strong>Thorsten Brückner</strong> - <a href="https://github.com/Geemania" "target=_blank">Geemania</a>
