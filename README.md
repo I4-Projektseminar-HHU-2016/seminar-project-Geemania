@@ -1,7 +1,6 @@
 # seminar-project-Geemania
 seminar-project-Geemania created by GitHub Classroom
 
-Project Title
 Hype surrounding the release of „World of Warcraft – Legion“ at 08/30/2016
 In what countries the release of "World of Warcraft - Legion" will be most hyped via twitter and what languages are the most tweeted ones?
 An analysis about fetching tweets to #legion #worldofwarcarf and #warcraft and visualizing them with python.
@@ -25,28 +24,28 @@ and you need a twitter account with access tokens to use the crawler for tweets
 
 A step by step series of instructions on how to get the code running
 
-Stay what the step will be
+Get an API Access Key/Token for twitter.
 
-Give the example
-And repeat
+	- for an english guide check the official twitter guide via https://dev.twitter.com/oauth/overview/application-owner-access-tokens
+	- for a german guide check my dokumentation
+	
+Install Python 2.7 and get the following Libs via pip install or manual installation
 
-until finished
-Versioning
+	• tweepy
+	• re
+	• collections
+	• unicodecsv
+	• nltk
+	• bokeh
+	• matplotlib
+	• mpl_toolkits.basemap
+	• os
+	• langdetect
+	
+Run the main.py to draw the plots based on the results.csv
 
-E.g.: We use SemVer for versioning.
+
 
 Authors
 
-Tina Test - HHU-test
-License
-
-This project is licensed under the MIT License - see the LICENSE.md file for details.
-
-Check http://choosealicense.com/ to choose a license for your code
-
-Acknowledgments
-
-Hat tip to anyone who's code was used
-Inspiration
-etc
-template inspired by https://gist.github.com/PurpleBooth/109311bb0361f32d87a2
+Thorsten Brückner - HHU Düsseldorf
