@@ -47,8 +47,12 @@ Install Python 2.7 and get the following Libs via pip install or manual installa
 	
 Run the main.py to draw the plots based on the results.csv
 
+Versioning
+
+	- Distributed revision control system Git
+
 
 
 Authors
 
-Thorsten Brückner - HHU Düsseldorf
+- <strong>Thorsten Brückner</strong> - <a href="https://github.com/Geemania">Geemania</a>
