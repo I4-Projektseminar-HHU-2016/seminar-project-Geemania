@@ -1,4 +1,7 @@
-# seminar-project-Geemania
+# Hype surrounding the release of „World of Warcraft – Legion“ at 08/30/2016 
+In what countries the release of "World of Warcraft - Legion" will be most hyped via twitter 
+and what languages are the most tweeted ones? 
+An analysis about fetching tweets to #legion #worldofwarcarf and #warcraft and visualizing them with python.
 seminar-project-Geemania created by GitHub Classroom
 
 Hype surrounding the release of „World of Warcraft – Legion“ at 08/30/2016
