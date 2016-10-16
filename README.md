@@ -4,7 +4,7 @@ and what languages are the most tweeted ones?
 An analysis about fetching tweets to #legion #worldofwarcarf and #warcraft and visualizing them with python.
 
 
-Features
+<strong>Features</strong>
 
 	- Twitter-Crawler to fetch tweets via client or timeline.
 	- creating world map and drawing geo-tags of tweets in different colors depending on its language with 
