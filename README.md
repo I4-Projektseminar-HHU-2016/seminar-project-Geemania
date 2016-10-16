@@ -27,8 +27,8 @@ A step by step series of instructions on how to get the code running
 
 Get an API Access Key/Token for twitter.
 
-	- for an english guide check the official twitter guide via 
-	  https://dev.twitter.com/oauth/overview/application-owner-access-tokens
+	- for an english guide check the official twitter guide via
+	  <a href="https://dev.twitter.com/oauth/overview/application-owner-access-tokens/">How to generate Twitter Keys</a>
 	- for a german guide check my dokumentation PDF (included)
 	- insert your generated keys/tokens in the twitter_keys.py
 	
