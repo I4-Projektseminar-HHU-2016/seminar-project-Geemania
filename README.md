@@ -50,6 +50,9 @@ Run the main.py to draw the plots based on the results.csv
 <strong>Versioning</strong>
 
 	- Distributed revision control system Git
+	
+<strong>License</strong>
+<p>This project is licensed under the MIT License - see the <a href="https://github.com/I4-Projektseminar-HHU-2016/seminar-project-Geemania/blob/master/LICENSE.md</a> MIT License for detailed information.</p>
 
 
 
