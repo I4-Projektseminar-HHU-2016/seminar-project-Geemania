@@ -53,7 +53,7 @@ Run the main.py to draw the plots based on the results.csv
 	
 <strong>License</strong>
 This project is licensed under the MIT License
-See the <a href="https://github.com/I4-Projektseminar-HHU-2016/seminar-project-Geemania/blob/master/LICENSE.md>MIT License for detailed information.</a>
+See the <a href="https://github.com/I4-Projektseminar-HHU-2016/seminar-project-Geemania/blob/master/LICENSE.md">MIT License for detailed information.</a>
 
 
 
