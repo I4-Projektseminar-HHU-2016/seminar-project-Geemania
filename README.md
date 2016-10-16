@@ -15,15 +15,15 @@ Features
 
 These instructions will get you a copy of the project up and running on your local machine.
 
-Prerequisities
+<strong>Prerequisities</strong>
 
-What things you need to install the software and how to install them
+<strong>What things you need to install the software and how to install them</strong>
 
 You need Python 2.7 get it here:
 https://www.python.org/download/releases/2.7/
 and you need a twitter account with access tokens to use the crawler for tweets 
 
-A step by step series of instructions on how to get the code running
+<strong>A step by step series of instructions on how to get the code running</strong>
 
 Get an API Access Key/Token for twitter.
 
@@ -47,12 +47,18 @@ Install Python 2.7 and get the following Libs via pip install or manual installa
 	
 Run the main.py to draw the plots based on the results.csv
 
-Versioning
+<strong>Versioning</strong>
 
 	- Distributed revision control system Git
 
 
 
-Authors
+<strong>Authors</strong>
 
 - <strong>Thorsten Brückner</strong> - <a href="https://github.com/Geemania">Geemania</a>
+
+<strong>Acknowledgments</strong>
+
+- the twitter crawler was made in collaboration with <a href="https://github.com/BrainWasheD">Raphael Katschke</a>
+
+
