@@ -7,8 +7,10 @@ An analysis about fetching tweets to #legion #worldofwarcarf and #warcraft and v
 Features
 
 	- Twitter-Crawler to fetch tweets via client or timeline.
-	- creating world map and drawing geo-tags of tweets in different colors depending on its language with matplotlib and basemap.
-		- creating and drawing two donut plots with bokeh to show the statistc of the different languages in combination with langdetec and twitter language detection.
+	- creating world map and drawing geo-tags of tweets in different colors depending on its language with 
+	  matplotlib and basemap.
+	- creating and drawing two donut plots with bokeh to show the statistc of the different languages in combination 
+	  with langdetec and twitter language detection.
 	- creating and drawing one bar plot with bokeh to show a statistic from tweets and the country of it's user.
 
 These instructions will get you a copy of the project up and running on your local machine.
